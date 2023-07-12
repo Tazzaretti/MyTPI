@@ -4,7 +4,7 @@ using Model.Models;
 
 namespace Service.Iservices
 {
-    public interface IVarianteService
+    public interface IVariantesService
     {
         Task<List<Variante>> GetAllVariantes();
         Task<Variante> GetVarianteById(int id);

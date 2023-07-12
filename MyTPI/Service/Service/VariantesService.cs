@@ -7,11 +7,11 @@ using Service.Iservices;
 
 namespace Service.Service
 {
-    public class VarianteService : IVariantesService
+    public class VariantesService : IVariantesService
     {
         private readonly eccomerceDBContext _dbContext;
 
-        public VarianteService(eccomerceDBContext dbContext)
+        public VariantesService(eccomerceDBContext dbContext)
         {
             _dbContext = dbContext;
         }
