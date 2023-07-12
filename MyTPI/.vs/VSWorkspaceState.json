@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Model",
+    "\\Model\\DTOs",
+    "\\MyTest",
+    "\\MyTest\\Controllers",
+    "\\Service",
+    "\\Service\\Helper",
+    "\\Service\\Mappings",
+    "\\Service\\Mappings\\Profiles"
+  ],
+  "SelectedNode": "\\MyTest\\Controllers\\UserController.cs",
+  "PreviewInSolutionExplorer": false
+}
