@@ -91,3 +91,13 @@ C:\Users\qvedo\OneDrive\Escritorio\MyTPI\MyTest\bin\Debug\net6.0\Serilog.Sinks.F
 C:\Users\qvedo\OneDrive\Escritorio\MyTPI\MyTest\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\qvedo\OneDrive\Escritorio\MyTPI\MyTest\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\qvedo\OneDrive\Escritorio\MyTPI\MyTest\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.dll
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\refint\MyTest.dll
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.pdb
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.csproj.AssemblyReference.cache
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.AssemblyInfoInputs.cache
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.AssemblyInfo.cs
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.csproj.CoreCompileInputs.cache
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tomia\OneDrive\Escritorio\New folder\MyTPI\MyTest\obj\Debug\net6.0\MyTest.MvcApplicationPartsAssemblyInfo.cache

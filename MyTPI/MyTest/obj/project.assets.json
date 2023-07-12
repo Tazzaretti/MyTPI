@@ -3210,19 +3210,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\qvedo\\.nuget\\packages\\": {}
+    "C:\\Users\\tomia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTest\\MyTest.csproj",
+      "projectUniqueName": "C:\\Users\\tomia\\OneDrive\\Escritorio\\New folder\\MyTPI\\MyTest\\MyTest.csproj",
       "projectName": "MyTest",
-      "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTest\\MyTest.csproj",
-      "packagesPath": "C:\\Users\\qvedo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTest\\obj\\",
+      "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\New folder\\MyTPI\\MyTest\\MyTest.csproj",
+      "packagesPath": "C:\\Users\\tomia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\New folder\\MyTPI\\MyTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\qvedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tomia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3236,11 +3236,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\Model\\Model.csproj"
+            "C:\\Users\\tomia\\OneDrive\\Escritorio\\New folder\\MyTPI\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\New folder\\MyTPI\\Model\\Model.csproj"
             },
-            "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\Service\\Service.csproj"
+            "C:\\Users\\tomia\\OneDrive\\Escritorio\\New folder\\MyTPI\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\New folder\\MyTPI\\Service\\Service.csproj"
             }
           }
         }
