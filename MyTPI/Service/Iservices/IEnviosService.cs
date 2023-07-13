@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Model.Models;
+using Model.DTOs;
 
 namespace Service.Iservices
 {
     public interface IEnviosService
     {
-        Task<List<Envios>> GetAllEnvios();
-        Task<Envios> GetEnvioById(int id);
-        Task<Envios> CreateEnvio(Envios envio);
-        Task<Envios> UpdateEnvio(int id, Envios envio);
+        Task<List<EnvioDTO>> GetAllEnvios();
+        Task<EnvioDTO> GetEnvioById(int id);
+        Task<EnvioDTO> CreateEnvio(EnvioDTO envio);
+        Task<EnvioDTO> UpdateEnvio(int id, EnvioDTO envio);
         Task DeleteEnvio(int id);
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using Model.DTOs;
 using Model.Models;
+using Microsoft.EntityFrameworkCore;
 using Service.Iservices;
 
 namespace Service.Service
@@ -16,43 +16,73 @@ namespace Service.Service
             _dbContext = dbContext;
         }
 
-        public async Task<List<Productos>> GetAllProductos()
+        public List<ProductoDTOs> GetAllProductos()
         {
-            return await _dbContext.Productos.ToListAsync();
+            return _dbContext.Productos
+                .Select(p => new ProductoDTOs
+                {
+                    IdProducto = p.IdProducto,
+                    Producto = p.Producto,
+                    Descripcion = p.Descripcion,
+                    Precio = p.Precio
+                })
+                .ToList();
         }
 
-        public async Task<Productos> GetProductoById(int id)
+        public ProductoDTOs GetProductoById(int id)
         {
-            return await _dbContext.Productos.FindAsync(id);
+            return _dbContext.Productos
+                .Where(p => p.IdProducto == id)
+                .Select(p => new ProductoDTOs
+                {
+                    IdProducto = p.IdProducto,
+                    Producto = p.Producto,
+                    Descripcion = p.Descripcion,
+                    Precio = p.Precio
+                })
+                .FirstOrDefault();
         }
 
-        public async Task<Productos> CreateProducto(Productos producto)
+        public ProductoDTOs CreateProducto(Productos producto)
         {
             _dbContext.Productos.Add(producto);
-            await _dbContext.SaveChangesAsync();
-            return producto;
+            _dbContext.SaveChanges();
+
+            return new ProductoDTOs
+            {
+                IdProducto = producto.IdProducto,
+                Producto = producto.Producto,
+                Descripcion = producto.Descripcion,
+                Precio = producto.Precio
+            };
         }
 
-        public async Task<Productos> UpdateProducto(int id, Productos producto)
+        public ProductoDTOs UpdateProducto(int id, Productos producto)
         {
-            var existingProducto = await _dbContext.Productos.FindAsync(id);
+            var existingProducto = _dbContext.Productos.Find(id);
             if (existingProducto != null)
             {
                 existingProducto.Producto = producto.Producto;
                 existingProducto.Descripcion = producto.Descripcion;
                 existingProducto.Precio = producto.Precio;
-                await _dbContext.SaveChangesAsync();
+                _dbContext.SaveChanges();
             }
-            return existingProducto;
+            return new ProductoDTOs
+            {
+                IdProducto = existingProducto.IdProducto,
+                Producto = existingProducto.Producto,
+                Descripcion = existingProducto.Descripcion,
+                Precio = existingProducto.Precio
+            };
         }
 
-        public async Task DeleteProducto(int id)
+        public void DeleteProducto(int id)
         {
-            var producto = await _dbContext.Productos.FindAsync(id);
+            var producto = _dbContext.Productos.Find(id);
             if (producto != null)
             {
                 _dbContext.Productos.Remove(producto);
-                await _dbContext.SaveChangesAsync();
+                _dbContext.SaveChanges();
             }
         }
     }

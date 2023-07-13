@@ -2,10 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\MyTPI",
+    "\\MyTPI\\Model",
+    "\\MyTPI\\Model\\DTOs",
     "\\MyTPI\\MyTest",
+    "\\MyTPI\\MyTest\\Controllers",
     "\\MyTPI\\Service",
-    "\\MyTPI\\Service\\Helper"
+    "\\MyTPI\\Service\\Helper",
+    "\\MyTPI\\Service\\Iservices",
+    "\\MyTPI\\Service\\Service"
   ],
-  "SelectedNode": "\\MyTPI\\Service\\Helper\\EncryptHelper.cs",
+  "SelectedNode": "\\MyTPI\\MyTest\\Controllers\\EnviosController.cs",
   "PreviewInSolutionExplorer": false
 }

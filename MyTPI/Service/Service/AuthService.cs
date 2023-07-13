@@ -27,48 +27,47 @@ namespace Service.Service
             _appSettings = appSettings.Value;
         }
 
-        public string CrearUsuario(CreateUser User)
+        public string CrearUsuario(CreateUserDTO user)
         {
-
-            if (string.IsNullOrEmpty(User.Mail))
+            if (string.IsNullOrEmpty(user.Mail))
             {
                 return "Ingrese un usuario";
             }
 
-            Users? user = _eccomerceDBContext.Users.FirstOrDefault(x => x.Mail == User.Mail);
+            Users existingUser = _eccomerceDBContext.Users.FirstOrDefault(x => x.Mail == user.Mail);
 
-            if (user != null)
+            if (existingUser != null)
             {
                 return "Usuario existente";
             }
 
-            _eccomerceDBContext.Add(new Users
+            Users newUser = new Users
             {
-                IdRol = User.IdRol,
-                Nombre = User.Nombre,
-                Apellido = User.Apellido,
-                Clave = User.Clave.GetSHA256(),
-                Mail = User.Mail,
-                IdUser = User.IdUser,
-            }) ;
+                IdRol = user.IdRol,
+                Nombre = user.Nombre,
+                Apellido = user.Apellido,
+                Clave = user.Clave.GetSHA256(),
+                Mail = user.Mail,
+                IdUser = user.IdUser,
+            };
+
+            _eccomerceDBContext.Users.Add(newUser);
             _eccomerceDBContext.SaveChanges();
 
             string response = GetToken(_eccomerceDBContext.Users.OrderBy(x => x.IdUser).Last());
             return response;
-
         }
-           
 
-        public string Login(AuthDTO User)
+        public string Login(AuthDTO user)
         {
-            Users? user = _eccomerceDBContext.Users.FirstOrDefault(x => x.Mail == User.Mail && x.Clave == User.Clave);
+            Users existingUser = _eccomerceDBContext.Users.FirstOrDefault(x => x.Mail == user.Mail && x.Clave == user.Clave.GetSHA256());
 
-            if (user == null)
+            if (existingUser == null)
             {
                 return string.Empty;
             }
 
-            return GetToken(user);
+            return GetToken(existingUser);
         }
 
         private string GetToken(Users user)
@@ -92,7 +91,3 @@ namespace Service.Service
         }
     }
 }
-
-
- 
-

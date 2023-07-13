@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Model.DTOs;
 using Model.Models;
 using Service.Iservices;
 
@@ -16,44 +16,82 @@ namespace Service.Service
             _dbContext = dbContext;
         }
 
-        public async Task<List<Envios>> GetAllEnvios()
+        public List<EnviosDTO> GetAllEnvios()
         {
-            return await _dbContext.Envios.ToListAsync();
+            return _dbContext.Envios.Select(envio => new EnviosDTO
+            {
+                IdEnvio = envio.IdEnvio,
+                Destino = envio.Destino,
+                EstadoEnvio = envio.EstadoEnvio,
+                IdProducto = envio.IdProducto,
+                IdVenta = envio.IdVenta
+            }).ToList();
         }
 
-        public async Task<Envios> GetEnvioById(int id)
+        public EnviosDTO GetEnvioById(int id)
         {
-            return await _dbContext.Envios.FindAsync(id);
+            var envio = _dbContext.Envios.Find(id);
+            if (envio != null)
+            {
+                return new EnviosDTO
+                {
+                    IdEnvio = envio.IdEnvio,
+                    Destino = envio.Destino,
+                    EstadoEnvio = envio.EstadoEnvio,
+                    IdProducto = envio.IdProducto,
+                    IdVenta = envio.IdVenta
+                };
+            }
+            return null;
         }
 
-        public async Task<Envios> CreateEnvio(Envios envio)
+        public EnviosDTO CreateEnvio(EnviosDTO envio)
         {
-            _dbContext.Envios.Add(envio);
-            await _dbContext.SaveChangesAsync();
+            var newEnvio = new Envios
+            {
+                Destino = envio.Destino,
+                EstadoEnvio = envio.EstadoEnvio,
+                IdProducto = envio.IdProducto,
+                IdVenta = envio.IdVenta
+            };
+
+            _dbContext.Envios.Add(newEnvio);
+            _dbContext.SaveChanges();
+
+            envio.IdEnvio = newEnvio.IdEnvio;
             return envio;
         }
 
-        public async Task<Envios> UpdateEnvio(int id, Envios envio)
+        public EnviosDTO UpdateEnvio(int id, EnviosDTO envio)
         {
-            var existingEnvio = await _dbContext.Envios.FindAsync(id);
+            var existingEnvio = _dbContext.Envios.Find(id);
             if (existingEnvio != null)
             {
                 existingEnvio.Destino = envio.Destino;
                 existingEnvio.EstadoEnvio = envio.EstadoEnvio;
                 existingEnvio.IdProducto = envio.IdProducto;
                 existingEnvio.IdVenta = envio.IdVenta;
-                await _dbContext.SaveChangesAsync();
+                _dbContext.SaveChanges();
+
+                return new EnviosDTO
+                {
+                    IdEnvio = existingEnvio.IdEnvio,
+                    Destino = existingEnvio.Destino,
+                    EstadoEnvio = existingEnvio.EstadoEnvio,
+                    IdProducto = existingEnvio.IdProducto,
+                    IdVenta = existingEnvio.IdVenta
+                };
             }
-            return existingEnvio;
+            return null;
         }
 
-        public async Task DeleteEnvio(int id)
+        public void DeleteEnvio(int id)
         {
-            var envio = await _dbContext.Envios.FindAsync(id);
+            var envio = _dbContext.Envios.Find(id);
             if (envio != null)
             {
                 _dbContext.Envios.Remove(envio);
-                await _dbContext.SaveChangesAsync();
+                _dbContext.SaveChanges();
             }
         }
     }

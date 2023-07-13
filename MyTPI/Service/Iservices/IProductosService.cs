@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Model.Models;
+using Model.DTOs;
 
 namespace Service.Iservices
 {
     public interface IProductosService
     {
-        Task<List<Productos>> GetAllProductos();
-        Task<Productos> GetProductoById(int id);
-        Task<Productos> CreateProducto(Productos producto);
-        Task<Productos> UpdateProducto(int id, Productos producto);
+        Task<List<ProductoDTO>> GetAllProductos();
+        Task<ProductoDTO> GetProductoById(int id);
+        Task<ProductoDTO> CreateProducto(ProductoDTO producto);
+        Task<ProductoDTO> UpdateProducto(int id, ProductoDTO producto);
         Task DeleteProducto(int id);
     }
 }

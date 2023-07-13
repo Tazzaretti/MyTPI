@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Model.Models;
 using Service.Iservices;
@@ -16,42 +15,42 @@ namespace Service.Service
             _dbContext = dbContext;
         }
 
-        public async Task<List<Variante>> GetAllVariantes()
+        public List<Variante> GetAllVariantes()
         {
-            return await _dbContext.Variante.ToListAsync();
+            return _dbContext.Variante.ToList();
         }
 
-        public async Task<Variante> GetVarianteById(int id)
+        public Variante GetVarianteById(int id)
         {
-            return await _dbContext.Variante.FindAsync(id);
+            return _dbContext.Variante.Find(id);
         }
 
-        public async Task<Variante> CreateVariante(Variante variante)
+        public Variante CreateVariante(Variante variante)
         {
             _dbContext.Variante.Add(variante);
-            await _dbContext.SaveChangesAsync();
+            _dbContext.SaveChanges();
             return variante;
         }
 
-        public async Task<Variante> UpdateVariante(int id, Variante variante)
+        public Variante UpdateVariante(int id, Variante variante)
         {
-            var existingVariante = await _dbContext.Variante.FindAsync(id);
+            var existingVariante = _dbContext.Variante.Find(id);
             if (existingVariante != null)
             {
                 existingVariante.Color = variante.Color;
                 existingVariante.Descripcion = variante.Descripcion;
-                await _dbContext.SaveChangesAsync();
+                _dbContext.SaveChanges();
             }
             return existingVariante;
         }
 
-        public async Task DeleteVariante(int id)
+        public void DeleteVariante(int id)
         {
-            var variante = await _dbContext.Variante.FindAsync(id);
+            var variante = _dbContext.Variante.Find(id);
             if (variante != null)
             {
                 _dbContext.Variante.Remove(variante);
-                await _dbContext.SaveChangesAsync();
+                _dbContext.SaveChanges();
             }
         }
     }

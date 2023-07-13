@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using Model.DTOs;
 using Model.Models;
@@ -23,12 +20,14 @@ namespace Service.Service
             _context = context;
         }
 
-
-
         public void DeleteUser(int id)
         {
-            _context.Users.Remove(_context.Users.Single(f => f.IdUser == id));
-            _context.SaveChanges();
+            var user = _context.Users.Find(id);
+            if (user != null)
+            {
+                _context.Users.Remove(user);
+                _context.SaveChanges();
+            }
         }
 
         public List<UserDTO> GetAll()
@@ -48,20 +47,22 @@ namespace Service.Service
 
         public UserDTO GetUserById(int id)
         {
-            return _mapper.Map<UserDTO>(_context.Users.Where(x => x.IdUser == id).First());
+            var user = _context.Users.FirstOrDefault(x => x.IdUser == id);
+            return _mapper.Map<UserDTO>(user);
         }
 
         public CreateUser UpdateUser(CreateUser user)
         {
-            Users userDataBase = _context.Users.Single(x => x.IdUser == user.IdUser);
-            userDataBase.Nombre = user.Nombre;
-            userDataBase.IdRol = _context.Users.First(x => x.IdRol == user.IdRol).IdRol;
-            _context.SaveChanges();
+            var existingUser = _context.Users.FirstOrDefault(x => x.IdUser == user.IdUser);
+            if (existingUser != null)
+            {
+                existingUser.Nombre = user.Nombre;
+                existingUser.IdRol = _context.Users.First(x => x.IdRol == user.IdRol).IdRol;
+                _context.SaveChanges();
+            }
 
-            var lastempleado = _context.Users.OrderBy(x => x.IdUser).Last();
-
-            return _mapper.Map<CreateUser>(lastempleado);
-
+            var lastUser = _context.Users.OrderBy(x => x.IdUser).Last();
+            return _mapper.Map<CreateUser>(lastUser);
         }
     }
 }
