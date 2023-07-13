@@ -12,43 +12,55 @@ using Model.Enum;
 
 namespace Service.Service
 {
-    public class UserSerivice:IUserSerivice
+    public class UserSerivice : IUserService
     {
         private readonly eccomerceDBContext _context;
         private readonly IMapper _mapper;
-        
+
         public UserSerivice(eccomerceDBContext context)
         {
             _mapper = AutoMapperConfig.Configure();
             _context = context;
         }
 
-        
-        public  List<UserDTO> getAll()
-        {
-            List<UserDTO> users = (from Users in _context.Users
-                                   join Rol in _context.Rol
-                                   on Users.IdRol equals Rol.IdRol
-                                   select new UserDTO()
-                                   {
-                                       Nombre = Users.Nombre,
-                                       IdUser = Users.IdUser,
-                                       UserType = Rol.UserType
-                                       
-                                   }).ToList();
 
-            return users;
-        }
 
-        public void DeleteUsers(int id)
+        public void DeleteUser(int id)
         {
             _context.Users.Remove(_context.Users.Single(f => f.IdUser == id));
             _context.SaveChanges();
         }
 
-        public CreateUser getUserById(int id)
+        public List<UserDTO> GetAll()
         {
-            return _mapper.Map<CreateUser>(_context.Users.Where(x => x.IdUser== id).First());
+            var users = (from Users in _context.Users
+                         join Rol in _context.Rol
+                         on Users.IdRol equals Rol.IdRol
+                         select new UserDTO()
+                         {
+                             Nombre = Users.Nombre,
+                             IdUser = Users.IdUser,
+                             UserType = Rol.UserType
+
+                         }).ToList();
+            return users;
+        }
+
+        public UserDTO GetUserById(int id)
+        {
+            return _mapper.Map<UserDTO>(_context.Users.Where(x => x.IdUser == id).First());
+        }
+
+        public CreateUser UpdateUser(CreateUser user)
+        {
+            Users userDataBase = _context.Users.Single(x => x.IdUser == user.IdUser);
+            userDataBase.Nombre = user.Nombre;
+            userDataBase.IdRol = _context.Users.First(x => x.IdRol == user.IdRol).IdRol;
+            _context.SaveChanges();
+
+            var lastempleado = _context.Users.OrderBy(x => x.IdUser).Last();
+
+            return _mapper.Map<CreateUser>(lastempleado);
 
         }
     }

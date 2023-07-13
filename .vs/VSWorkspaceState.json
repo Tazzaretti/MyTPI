@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\MyTPI",
+    "\\MyTPI\\MyTest",
+    "\\MyTPI\\Service",
+    "\\MyTPI\\Service\\Helper"
+  ],
+  "SelectedNode": "\\MyTPI\\Service\\Helper\\EncryptHelper.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Model.DTOs;
 using MyTest.Common;
 using Service.Iservices;
+using Service.Service;
 using System.Security.Claims;
 namespace MyTest.Controllers
 {
@@ -14,9 +15,9 @@ namespace MyTest.Controllers
     public class UserController : ControllerBase
     {
 
-        private readonly IUserSerivice _userSerivice;
+        private readonly IUserService _userSerivice;
         private readonly ILogger<UserController> _logger;
-        public UserController (IUserSerivice adminService, ILogger<UserController> logger)
+        public UserController (IUserService adminService, ILogger<UserController> logger)
         {
             _userSerivice = adminService;
             _logger = logger;
@@ -27,7 +28,7 @@ namespace MyTest.Controllers
 
             try
             {
-                var response = _userSerivice.getUserById(id);
+                var response = _userSerivice.GetUserById(id);
                 if (response == null)
                 {
                     return NotFound($"No se encontro el usuario con id {id}");
@@ -52,7 +53,7 @@ namespace MyTest.Controllers
 
             try
             {
-                var response = _userSerivice.getAll();
+                var response = _userSerivice.GetAll();
                 if (response.Count == 0) {
                     return NotFound("No hay Usuarios");
                 }
@@ -69,7 +70,7 @@ namespace MyTest.Controllers
         public ActionResult DeleteUsers(int id)
         {
             try {
-                _userSerivice.DeleteUsers(id);
+                _userSerivice.DeleteUser(id);
                 return Ok();
             }
             catch(Exception ex)
@@ -79,5 +80,27 @@ namespace MyTest.Controllers
             
         }
 
+        
+        [HttpPut("UpdateUser")]
+        public ActionResult UpdateUser([FromBody] CreateUser user)
+        {
+            try
+            {
+                var response = _userSerivice.UpdateUser(user);
+
+                string baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
+                string apiAndEndpointUrl = $"api/Empleado/GetUserById";
+                string locationUrl = $"{baseUrl}/{apiAndEndpointUrl}/{response.IdUser}";
+                return Created(locationUrl, response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCustomError("UpdateEmpleado", ex);
+                return BadRequest($"{ex.Message}");
+            }
+        }
+
     }
 }
+
+

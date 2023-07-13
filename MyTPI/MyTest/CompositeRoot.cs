@@ -6,8 +6,13 @@ namespace MyTest
     { 
         public static void DependecyInjection (WebApplicationBuilder builder) 
         {
-            builder.Services.AddScoped<IUserSerivice,UserSerivice>();
+            builder.Services.AddScoped<IUserService,UserSerivice>();
             builder.Services.AddScoped<IAuthService, AuthSerivce>();
+            builder.Services.AddScoped<IProductosService, ProductosService>();
+            builder.Services.AddScoped<IEnviosService, EnviosService>();
+            builder.Services.AddScoped<IVariantesService, VariantesService>();
+            builder.Services.AddScoped<IVentasService, VentasService>();
+
         }
 
     }
