@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\MyTest\\MyTest.csproj": {}
+    "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\MyTest\\MyTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Model\\Model.csproj": {
+    "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\qvedo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Model\\obj\\",
+        "projectPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\josec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\qvedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josec\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,17 +75,17 @@
         }
       }
     },
-    "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\MyTest\\MyTest.csproj": {
+    "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\MyTest\\MyTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\MyTest\\MyTest.csproj",
+        "projectUniqueName": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\MyTest\\MyTest.csproj",
         "projectName": "MyTest",
-        "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\MyTest\\MyTest.csproj",
-        "packagesPath": "C:\\Users\\qvedo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\MyTest\\obj\\",
+        "projectPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\MyTest\\MyTest.csproj",
+        "packagesPath": "C:\\Users\\josec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\MyTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\qvedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josec\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,11 +99,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Model\\Model.csproj"
+              "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Model\\Model.csproj"
               },
-              "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Service\\Service.csproj"
+              "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Service\\Service.csproj"
               }
             }
           }
@@ -158,17 +158,17 @@
         }
       }
     },
-    "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Service\\Service.csproj": {
+    "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\qvedo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Service\\obj\\",
+        "projectPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\josec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\qvedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josec\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -182,8 +182,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\qvedo\\OneDrive\\Escritorio\\MyTPI\\MyTPI\\Model\\Model.csproj"
+              "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\josec\\Desktop\\MyTPI\\MyTPI\\Model\\Model.csproj"
               }
             }
           }

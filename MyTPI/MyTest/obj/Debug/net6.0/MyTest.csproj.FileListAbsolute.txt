@@ -277,3 +277,13 @@ C:\Users\qvedo\OneDrive\Escritorio\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\scopedcss
 C:\Users\qvedo\OneDrive\Escritorio\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.csproj.CopyComplete
 C:\Users\qvedo\OneDrive\Escritorio\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.genruntimeconfig.cache
 C:\Users\qvedo\OneDrive\Escritorio\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\ref\MyTest.dll
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.dll
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\refint\MyTest.dll
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.pdb
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.csproj.AssemblyReference.cache
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.AssemblyInfoInputs.cache
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.AssemblyInfo.cs
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.csproj.CoreCompileInputs.cache
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\josec\Desktop\MyTPI\MyTPI\MyTest\obj\Debug\net6.0\MyTest.MvcApplicationPartsAssemblyInfo.cache

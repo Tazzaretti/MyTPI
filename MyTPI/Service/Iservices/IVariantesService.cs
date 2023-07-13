@@ -7,10 +7,10 @@ namespace Service.Iservices
 {
     public interface IVariantesService
     {
-        Task<List<Variante>> GetAllVariantes();
-        Task<Variante> GetVarianteById(int id);
-        Task<Variante> CreateVariante(Variante variante);
-        Task<Variante> UpdateVariante(int id, Variante variante);
-        Task DeleteVariante(int id);
+        List<Variante> GetAllVariantes();
+        Variante GetVarianteById(int id);
+        Variante CreateVariante(Variante variante);
+        Variante UpdateVariante(int id, Variante variante);
+        void DeleteVariante(int id);
     }
 }

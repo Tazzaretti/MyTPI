@@ -7,7 +7,7 @@ namespace Service.Iservices
     {
         List<UserDTO> GetAll();
         UserDTO GetUserById(int id);
-        UserDTO UpdateUser(CreateUser user);
+        CreateUser UpdateUser(CreateUser user);
         void DeleteUser(int id);
     }
 }

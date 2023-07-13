@@ -9,7 +9,7 @@ namespace Service.Iservices
 {
     public interface IAuthService
     {
-        string CrearUsuario(CreateUserDTO user);
+        string CrearUsuario(CreateUser user);
         string Login(AuthDTO user);
     }
 }

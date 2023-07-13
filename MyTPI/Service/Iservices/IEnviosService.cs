@@ -6,10 +6,10 @@ namespace Service.Iservices
 {
     public interface IEnviosService
     {
-        Task<List<EnvioDTO>> GetAllEnvios();
-        Task<EnvioDTO> GetEnvioById(int id);
-        Task<EnvioDTO> CreateEnvio(EnvioDTO envio);
-        Task<EnvioDTO> UpdateEnvio(int id, EnvioDTO envio);
-        Task DeleteEnvio(int id);
+        List<EnvioDTOs> GetAllEnvios();
+        EnvioDTOs GetEnvioById(int id);
+        EnvioDTOs CreateEnvio(EnvioDTOs envio);
+        EnvioDTOs UpdateEnvio(int id, EnvioDTOs envio);
+        public void DeleteEnvio(int id);
     }
 }

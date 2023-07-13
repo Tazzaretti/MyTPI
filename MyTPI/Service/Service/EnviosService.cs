@@ -16,9 +16,9 @@ namespace Service.Service
             _dbContext = dbContext;
         }
 
-        public List<EnviosDTO> GetAllEnvios()
+        public List<EnvioDTOs> GetAllEnvios()
         {
-            return _dbContext.Envios.Select(envio => new EnviosDTO
+            return _dbContext.Envios.Select(envio => new EnvioDTOs
             {
                 IdEnvio = envio.IdEnvio,
                 Destino = envio.Destino,
@@ -28,12 +28,12 @@ namespace Service.Service
             }).ToList();
         }
 
-        public EnviosDTO GetEnvioById(int id)
+        public EnvioDTOs GetEnvioById(int id)
         {
             var envio = _dbContext.Envios.Find(id);
             if (envio != null)
             {
-                return new EnviosDTO
+                return new EnvioDTOs
                 {
                     IdEnvio = envio.IdEnvio,
                     Destino = envio.Destino,
@@ -45,7 +45,7 @@ namespace Service.Service
             return null;
         }
 
-        public EnviosDTO CreateEnvio(EnviosDTO envio)
+        public EnvioDTOs CreateEnvio(EnvioDTOs envio)
         {
             var newEnvio = new Envios
             {
@@ -62,7 +62,7 @@ namespace Service.Service
             return envio;
         }
 
-        public EnviosDTO UpdateEnvio(int id, EnviosDTO envio)
+        public EnvioDTOs UpdateEnvio(int id, EnvioDTOs envio)
         {
             var existingEnvio = _dbContext.Envios.Find(id);
             if (existingEnvio != null)
@@ -72,8 +72,8 @@ namespace Service.Service
                 existingEnvio.IdProducto = envio.IdProducto;
                 existingEnvio.IdVenta = envio.IdVenta;
                 _dbContext.SaveChanges();
-
-                return new EnviosDTO
+           
+                return new EnvioDTOs
                 {
                     IdEnvio = existingEnvio.IdEnvio,
                     Destino = existingEnvio.Destino,

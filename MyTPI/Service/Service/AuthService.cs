@@ -27,7 +27,7 @@ namespace Service.Service
             _appSettings = appSettings.Value;
         }
 
-        public string CrearUsuario(CreateUserDTO user)
+        public string CrearUsuario(CreateUser user)
         {
             if (string.IsNullOrEmpty(user.Mail))
             {
