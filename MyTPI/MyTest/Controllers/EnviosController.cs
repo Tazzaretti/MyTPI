@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Model.DTOs;
 using Model.Models;
 using Service.Iservices;
 
@@ -37,17 +38,17 @@ namespace MyTest.Controllers
 
         // POST: api/Envios
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Envios envio)
+        public  IActionResult Post([FromBody] EnvioDTOs envio)
         {
-            var nuevoEnvio = await _enviosService.CreateEnvio(envio);
+            var nuevoEnvio =  _enviosService.CreateEnvio(envio);
             return CreatedAtAction(nameof(Get), new { id = nuevoEnvio.IdEnvio }, nuevoEnvio);
         }
 
         // PUT: api/Envios/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Envios envio)
+        public  IActionResult Put(int id, [FromBody] EnvioDTOs envio)
         {
-            var updatedEnvio = await _enviosService.UpdateEnvio(id, envio);
+            var updatedEnvio =  _enviosService.UpdateEnvio(id, envio);
             if (updatedEnvio == null)
             {
                 return NotFound();
@@ -57,9 +58,9 @@ namespace MyTest.Controllers
 
         // DELETE: api/Envios/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public IActionResult Delete(int id)
         {
-            await _enviosService.DeleteEnvio(id);
+             _enviosService.DeleteEnvio(id);
             return Ok();
         }
     }

@@ -37,17 +37,17 @@ namespace MyTest.Controllers
 
         // POST: api/Ventas
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Ventas venta)
+        public IActionResult Post([FromBody] Ventas venta)
         {
-            var nuevaVenta = await _ventasService.CreateVenta(venta);
+            var nuevaVenta =  _ventasService.CreateVenta(venta);
             return CreatedAtAction(nameof(Get), new { id = nuevaVenta.IdVenta }, nuevaVenta);
         }
 
         // PUT: api/Ventas/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Ventas venta)
+        public IActionResult Put(int id, [FromBody] Ventas venta)
         {
-            var updatedVenta = await _ventasService.UpdateVenta(id, venta);
+            var updatedVenta =  _ventasService.UpdateVenta(id, venta);
             if (updatedVenta == null)
             {
                 return NotFound();
@@ -57,9 +57,9 @@ namespace MyTest.Controllers
 
         // DELETE: api/Ventas/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public  IActionResult Delete(int id)
         {
-            await _ventasService.DeleteVenta(id);
+             _ventasService.DeleteVenta(id);
             return Ok();
         }
     }

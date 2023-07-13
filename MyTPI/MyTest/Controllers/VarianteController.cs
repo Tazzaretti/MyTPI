@@ -37,17 +37,17 @@ namespace MyTest.Controllers
 
         // POST: api/Variantes
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Variante variante)
+        public  IActionResult Post([FromBody] Variante variante)
         {
-            var nuevaVariante = await _variantesService.CreateVariante(variante);
+            var nuevaVariante =  _variantesService.CreateVariante(variante);
             return CreatedAtAction(nameof(Get), new { id = nuevaVariante.IdVariante }, nuevaVariante);
         }
 
         // PUT: api/Variantes/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Variante variante)
+        public  IActionResult Put(int id, [FromBody] Variante variante)
         {
-            var updatedVariante = await _variantesService.UpdateVariante(id, variante);
+            var updatedVariante =  _variantesService.UpdateVariante(id, variante);
             if (updatedVariante == null)
             {
                 return NotFound();
@@ -57,9 +57,9 @@ namespace MyTest.Controllers
 
         // DELETE: api/Variantes/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public  IActionResult Delete(int id)
         {
-            await _variantesService.DeleteVariante(id);
+             _variantesService.DeleteVariante(id);
             return Ok();
         }
     }
