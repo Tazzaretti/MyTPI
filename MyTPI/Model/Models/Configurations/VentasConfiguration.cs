@@ -13,7 +13,7 @@ namespace Model.Models.Configurations
         public void Configure(EntityTypeBuilder<Ventas> entity)
         {
             entity.HasKey(e => e.IdVenta)
-                .HasName("PK__Ventas__459533BF50FC65A2");
+                .HasName("PK__Ventas__459533BF17A7EF29");
 
             entity.Property(e => e.IdVenta)
                 .ValueGeneratedNever()
@@ -29,7 +29,7 @@ namespace Model.Models.Configurations
                 .WithMany(p => p.Ventas)
                 .HasForeignKey(d => d.IdUser)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Ventas__id_user__0C50D423");
+                .HasConstraintName("FK__Ventas__id_user__36470DEF");
 
             OnConfigurePartial(entity);
         }

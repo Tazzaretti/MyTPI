@@ -13,7 +13,7 @@ namespace Model.Models.Configurations
         public void Configure(EntityTypeBuilder<Productos> entity)
         {
             entity.HasKey(e => e.IdProducto)
-                .HasName("PK__Producto__FF341C0D5475195D");
+                .HasName("PK__Producto__FF341C0D17EB058E");
 
             entity.Property(e => e.IdProducto)
                 .ValueGeneratedNever()

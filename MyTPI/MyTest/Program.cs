@@ -8,6 +8,7 @@ using Model.Models;
 using MyTest;
 using Serilog;
 using Serilog.Events;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,6 +54,33 @@ Log.Logger = new LoggerConfiguration()
 
 
 builder.Services.AddDbContext<eccomerceDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ecommerceDBConnection")));
+
+
+
+builder.Services.AddSwaggerGen(setupAction =>
+{
+    setupAction.AddSecurityDefinition("MyTestAuth", new OpenApiSecurityScheme() //Esto va a permitir usar swagger con el token.
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        Description = "Acá pegar el token generado al loguearse."
+    });
+
+    setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "MyTestAuth" } //Tiene que coincidir con el id seteado arriba en la definición
+                }, new List<string>() }
+    });
+});
+
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

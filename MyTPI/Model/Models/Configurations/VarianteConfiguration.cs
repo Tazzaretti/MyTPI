@@ -13,7 +13,7 @@ namespace Model.Models.Configurations
         public void Configure(EntityTypeBuilder<Variante> entity)
         {
             entity.HasKey(e => e.IdVariante)
-                .HasName("PK__Variante__85058CA95646D9CD");
+                .HasName("PK__Variante__85058CA9111DB50F");
 
             entity.Property(e => e.IdVariante)
                 .ValueGeneratedNever()

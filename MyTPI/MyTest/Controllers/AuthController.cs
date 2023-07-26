@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.DTOs;
+using Model.ViewModels;
 using MyTest.Common;
 using Service.Iservices;
 using Service.Service;
@@ -40,7 +41,7 @@ namespace MyTest.Controllers
         }
 
         [HttpPost("CrearUsuario")]
-        public ActionResult<string> CrearUsuario([FromBody] CreateUser User)
+        public ActionResult<string> CrearUsuario([FromBody] UserViewModel User)
         {
             string response = string.Empty;
             try

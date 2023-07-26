@@ -13,7 +13,7 @@ namespace Model.Models.Configurations
         public void Configure(EntityTypeBuilder<Envios> entity)
         {
             entity.HasKey(e => e.IdEnvio)
-                .HasName("PK__Envios__8C48C8CA4923CEE2");
+                .HasName("PK__Envios__8C48C8CAB335D2C2");
 
             entity.Property(e => e.IdEnvio)
                 .ValueGeneratedNever()
@@ -37,13 +37,13 @@ namespace Model.Models.Configurations
                 .WithMany(p => p.Envios)
                 .HasForeignKey(d => d.IdProducto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Envios__id_produ__0F2D40CE");
+                .HasConstraintName("FK__Envios__id_produ__39237A9A");
 
             entity.HasOne(d => d.IdVentaNavigation)
                 .WithMany(p => p.Envios)
                 .HasForeignKey(d => d.IdVenta)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Envios__id_venta__10216507");
+                .HasConstraintName("FK__Envios__id_venta__3A179ED3");
 
             OnConfigurePartial(entity);
         }

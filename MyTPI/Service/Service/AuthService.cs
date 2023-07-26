@@ -13,6 +13,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.Extensions.Options;
 using Service.Helper;
+using Model.ViewModels;
 
 namespace Service.Service
 {
@@ -27,28 +28,30 @@ namespace Service.Service
             _appSettings = appSettings.Value;
         }
 
-        public string CrearUsuario(CreateUser user)
+      
+
+        public string CrearUsuario(UserViewModel user)
         {
-            if (string.IsNullOrEmpty(user.Mail))
+             if (string.IsNullOrEmpty(user.Mail))
             {
                 return "Ingrese un usuario";
             }
 
-            Users existingUser = _eccomerceDBContext.Users.FirstOrDefault(x => x.Mail == user.Mail);
+            Users? existingUser = _eccomerceDBContext.Users.FirstOrDefault(x => x.Mail == user.Mail);
 
             if (existingUser != null)
             {
                 return "Usuario existente";
             }
 
-            Users newUser = new Users
+            Users newUser = new Users()
             {
                 IdRol = user.IdRol,
                 Nombre = user.Nombre,
                 Apellido = user.Apellido,
                 Clave = user.Clave.GetSHA256(),
-                Mail = user.Mail,
-                IdUser = user.IdUser,
+                Mail = user.Mail
+
             };
 
             _eccomerceDBContext.Users.Add(newUser);
@@ -60,7 +63,7 @@ namespace Service.Service
 
         public string Login(AuthDTO user)
         {
-            Users existingUser = _eccomerceDBContext.Users.FirstOrDefault(x => x.Mail == user.Mail && x.Clave == user.Clave.GetSHA256());
+            Users? existingUser = _eccomerceDBContext.Users.FirstOrDefault(x => x.Mail == user.Mail && x.Clave == user.Clave.GetSHA256());
 
             if (existingUser == null)
             {
@@ -68,6 +71,11 @@ namespace Service.Service
             }
 
             return GetToken(existingUser);
+        }
+
+        public string ValidateRole(int id)
+        {
+            return _eccomerceDBContext.Rol.FirstOrDefault(x => x.IdRol == id).UserType;
         }
 
         private string GetToken(Users user)

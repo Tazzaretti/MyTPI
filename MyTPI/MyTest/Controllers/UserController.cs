@@ -9,9 +9,11 @@ using Service.Service;
 using System.Security.Claims;
 namespace MyTest.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
-    
+    [Authorize]
+
     public class UserController : ControllerBase
     {
 

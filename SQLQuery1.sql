@@ -1,9 +1,9 @@
-
 -- Tabla: Rol
 CREATE TABLE Rol (
     id_rol INT PRIMARY KEY NOT NULL,
     UserType NVARCHAR(50) NOT NULL
 );
+
 
 
 
@@ -28,8 +28,8 @@ CREATE TABLE Users (
     id_user INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
     nombre NVARCHAR(100) NOT NULL,
     apellido NVARCHAR(100) NOT NULL,
-    mail NVARCHAR(100) NOT NULL UNIQUE,
-	clave NVARCHAR(50) NOT NULL,
+    mail NVARCHAR(100) NOT NULL UNIQUE ,
+	clave NVARCHAR(4000) NOT NULL,
     id_rol INT NOT NULL,
     FOREIGN KEY (id_rol) REFERENCES Rol(id_rol)
 );

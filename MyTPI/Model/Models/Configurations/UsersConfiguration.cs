@@ -13,9 +13,9 @@ namespace Model.Models.Configurations
         public void Configure(EntityTypeBuilder<Users> entity)
         {
             entity.HasKey(e => e.IdUser)
-                .HasName("PK__Users__D2D14637C17C430A");
+                .HasName("PK__Users__D2D14637E379E381");
 
-            entity.HasIndex(e => e.Mail, "UQ__Users__7A21290425555B0B")
+            entity.HasIndex(e => e.Mail, "UQ__Users__7A212904A5B6F48E")
                 .IsUnique();
 
             entity.Property(e => e.IdUser).HasColumnName("id_user");
@@ -27,7 +27,7 @@ namespace Model.Models.Configurations
 
             entity.Property(e => e.Clave)
                 .IsRequired()
-                .HasMaxLength(50)
+                .HasMaxLength(4000)
                 .HasColumnName("clave");
 
             entity.Property(e => e.IdRol).HasColumnName("id_rol");
@@ -46,7 +46,7 @@ namespace Model.Models.Configurations
                 .WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRol)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Users__id_rol__09746778");
+                .HasConstraintName("FK__Users__id_rol__336AA144");
 
             OnConfigurePartial(entity);
         }
