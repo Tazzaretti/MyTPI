@@ -13,6 +13,5 @@ namespace Service.Iservices
         string CrearUsuario(UserViewModel user);
         string Login(AuthDTO user);
 
-        string ValidateRole(int id);
     }
 }

@@ -47,8 +47,8 @@ namespace MyTest.Controllers
         }
         
         
+        [Authorize (policy: "SuperAdminAndAdmin") ]
         
-
         [HttpGet ("getAll")]
         public ActionResult<List<UserDTO>> getAll()
         {

@@ -41,6 +41,12 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false
     };
 });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("SuperAdmin", policy => policy.RequireClaim("AdminType", "2"));
+    options.AddPolicy("Admin", policy => policy.RequireClaim("AdminType", "1"));
+    options.AddPolicy("SuperAdminAndAdmin", policy => policy.RequireClaim("AdminType", "1" , "2"));
+});
 
 // Configuracion SeriLog
 string logsFolder = Path.Combine(Directory.GetCurrentDirectory(), "Logs");

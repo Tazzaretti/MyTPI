@@ -73,11 +73,7 @@ namespace Service.Service
             return GetToken(existingUser);
         }
 
-        public string ValidateRole(int id)
-        {
-            return _eccomerceDBContext.Rol.FirstOrDefault(x => x.IdRol == id).UserType;
-        }
-
+     
         private string GetToken(Users user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -89,7 +85,7 @@ namespace Service.Service
                     {
                         new Claim(ClaimTypes.NameIdentifier, user.IdUser.ToString()),
                         new Claim(ClaimTypes.Email, user.Mail),
-                        new Claim(ClaimTypes.Role, _eccomerceDBContext.Rol.First(x => x.IdRol == user.IdRol).UserType)
+                        new Claim("AdminType", user.IdRol.ToString())
                     }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
